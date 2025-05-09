@@ -3,11 +3,15 @@ import { examPaperRoutes } from "./src/rotues/exampaperRouter.js";
 import { connectDB } from "./src/utils/db.js";
 import formbody from "@fastify/formbody";
 import dotenv from "dotenv";
+import { questionRoutes } from "./src/rotues/questionRouter.js";
 const app = Fastify({ logger: true });
 
 dotenv.config();
 app.register(formbody);
 app.register(examPaperRoutes);
+// app.register(instructorRoutes);
+// app.register(instituteRoutes);
+app.register(questionRoutes);
 const start = async () => {
   await connectDB();
 

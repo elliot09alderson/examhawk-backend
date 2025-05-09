@@ -6,6 +6,9 @@ const QuestionSchema = new mongoose.Schema({
     enum: ["MCQ", "MSQ", "QA"],
     required: true,
   },
+  answerText: { type: String },
+  answerImage: { type: String },
+  quesetionImages: [String],
   questionText: { type: String, required: true },
   options: [String], // only for MCQ & MSQ
   correctAnswers: [String], // e.g. ['A'], or ['A','C'] for MSQ
